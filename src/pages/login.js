@@ -43,6 +43,7 @@ export default function Login() {
       localStorage.setItem("image", response.data.user.image_url)
       localStorage.setItem("id", response.data.user.id)
 
+      HideLoading()
       return navigate("/dashboard")
 
     } catch (error) {
