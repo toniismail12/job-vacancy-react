@@ -32,7 +32,7 @@ export default function DetailListJob() {
                 console.log('Response:', response.data);
             
                 alert("Delete Success")
-                return (window.location.href= "/management-data")
+                return navigate("/management-data")
         
             } catch (error) {
                 console.error('Error:', error);
