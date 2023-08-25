@@ -2,8 +2,10 @@ import Main from '../layouts/main'
 import { useState } from 'react';
 import api from '../api';
 import { ShowLoading, HideLoading } from '../components';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     email: '',
@@ -41,7 +43,7 @@ export default function Login() {
       localStorage.setItem("image", response.data.user.image_url)
       localStorage.setItem("id", response.data.user.id)
 
-      return (window.location.href= "/dashboard")
+      return navigate("/dashboard")
 
     } catch (error) {
       HideLoading()

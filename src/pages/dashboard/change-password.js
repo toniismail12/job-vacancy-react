@@ -3,8 +3,12 @@ import Dashboard from '../../layouts/dashboard';
 import { useState } from 'react';
 import { ShowLoading, HideLoading } from '../../components';
 import api from '../../api';
+import { useNavigate } from 'react-router-dom';
 
 export default function ChangePasswordPage() {
+    
+    const navigate = useNavigate()
+
     const [formData, setFormData] = useState({
         current_password: '',
         new_password: '',
@@ -45,7 +49,7 @@ export default function ChangePasswordPage() {
 
             alert("success update password, please login again.")
 
-            return (window.location.href = "/")
+            return navigate("/")
 
         } catch (error) {
             HideLoading()
